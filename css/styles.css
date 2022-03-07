@@ -216,11 +216,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media all and (max-width: 767px) {
-.flip-card .flip-card-inner {
-    transform: rotateY(180deg);
-}
-}
+
 @media all and (min-width: 900px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
