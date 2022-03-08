@@ -68,6 +68,10 @@ body {
     justify-content: space-between;
   }
 
+  .navbar{
+     z-index: 999;
+  }
+  
   .nav-link {
       cursor: pointer;
       position: relative;
