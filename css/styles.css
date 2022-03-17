@@ -21,6 +21,7 @@ body {
 
   }
 
+
   main {
     padding-bottom: 2.5rem;
     margin-top: 5rem;
@@ -68,7 +69,6 @@ body {
     justify-content: space-between;
 
   }
-
 
   .nav-link {
       cursor: pointer;
@@ -198,21 +198,61 @@ body {
     transform: scale(1.3);
     transition: all 0.3s ease-in-out;
   }
+  .hamburger{
+    display: none;
+    cursor: pointer;
+  }
+.bar{
+  display:block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
 
-@media all and (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
+@media all and (max-width: 575.98px) {
+  .hamburger{
+    display:block;
+  }
+  .hamburger.active .bar:nth-child(2){
+    opacity:0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu{
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction:column;
+    background-color: #49bac9;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .nav-item{
+    margin: 16px 0;
+  }
+  .nav-menu.active{
+    left: 0;
   }
 }
 
-@media all and (min-width: 600px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+@media all and (max-width: 767.98px) {
+  .card-text{
+    font-size: 10px;
   }
-}
-@media all and (max-width: 700px) {
-  .grid {
-    grid-template-columns: 1fr;
+  .card-title-h3{
+  font-size: 12px;
+  }
+  h1 {
+    font-size: 22px;
   }
   .card-text{
     font-size: 10px;
@@ -220,25 +260,6 @@ body {
   .card-title-h3{
   font-size: 12px;
   }
-}
-@media all and (min-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media all and (max-width: 750px) {
-  .grid {
-    grid-gap: 10px;
-  }
-  .grid__item:last-child {
-    grid-column: auto / auto;
-    grid-row: auto / auto;
-  }
-  h1 {
-    font-size: 22px;
-  }
-
 .profile {
     text-align: center;
     display: flex;
@@ -256,4 +277,14 @@ body {
     margin: 5px;
     text-align: center;
   }
+  }
+  @media all and (min-width: 900px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media all and (min-width:992px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
